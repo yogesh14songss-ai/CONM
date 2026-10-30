@@ -14,50 +14,47 @@
     --teal: #71c7ba;
     --code: #0d1219;
     --radius: 16px;
-    --shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.22)
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth
 }
 
 body {
     min-height: 100vh;
     padding: 0 22px 36px;
-    background:
-        radial-gradient(ellipse at 14% 0%, rgba(63, 85, 145, 0.19), transparent 34%),
-        radial-gradient(ellipse at 90% 18%, rgba(107, 64, 105, 0.12), transparent 30%),
-        var(--page);
+    background: radial-gradient(ellipse at 14% 0%, rgba(63, 85, 145, 0.19), transparent 34%), radial-gradient(ellipse at 90% 18%, rgba(107, 64, 105, 0.12), transparent 30%), var(--page);
     color: var(--text);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    line-height: 1.6
 }
 
 button,
 input {
-    font: inherit;
+    font: inherit
 }
 
 button {
-    cursor: pointer;
+    cursor: pointer
 }
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
     outline: 3px solid rgba(141, 167, 255, 0.75);
-    outline-offset: 3px;
+    outline-offset: 3px
 }
 
 .page-shell {
     max-width: 1240px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .site-header {
@@ -66,7 +63,7 @@ input:focus-visible {
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light)
 }
 
 .brand {
@@ -74,7 +71,7 @@ input:focus-visible {
     align-items: center;
     gap: 11px;
     color: var(--text);
-    text-decoration: none;
+    text-decoration: none
 }
 
 .brand-mark,
@@ -88,13 +85,13 @@ input:focus-visible {
     background: linear-gradient(140deg, #6688ef, #765b9c);
     font-size: 17px;
     font-weight: 800;
-    box-shadow: 0 7px 20px rgba(87, 112, 203, 0.28);
+    box-shadow: 0 7px 20px rgba(87, 112, 203, 0.28)
 }
 
 .brand-name {
     font-size: 15px;
     font-weight: 800;
-    letter-spacing: 0.17em;
+    letter-spacing: 0.17em
 }
 
 .main-nav {
@@ -104,7 +101,7 @@ input:focus-visible {
     padding: 5px;
     border: 1px solid var(--border-light);
     border-radius: 11px;
-    background: rgba(12, 17, 25, 0.55);
+    background: rgba(12, 17, 25, 0.55)
 }
 
 .nav-button {
@@ -115,23 +112,23 @@ input:focus-visible {
     color: var(--muted);
     font-size: 13px;
     font-weight: 650;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease
 }
 
 .nav-button:hover,
 .nav-button.active {
     background: var(--surface-soft);
-    color: var(--text);
+    color: var(--text)
 }
 
 .container {
     max-width: 1120px;
     margin: 0 auto;
-    padding-top: 28px;
+    padding-top: 28px
 }
 
 .hidden {
-    display: none !important;
+    display: none !important
 }
 
 .hero-panel {
@@ -146,7 +143,7 @@ input:focus-visible {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 22px;
     background: linear-gradient(118deg, #233c77 0%, #3a3c73 48%, #554064 100%);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow)
 }
 
 .hero-panel::after {
@@ -159,13 +156,13 @@ input:focus-visible {
     border-radius: 50%;
     content: "";
     box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.025), 0 0 0 80px rgba(255, 255, 255, 0.02);
-    pointer-events: none;
+    pointer-events: none
 }
 
 .hero-copy,
 .hero-side {
     position: relative;
-    z-index: 1;
+    z-index: 1
 }
 
 .eyebrow {
@@ -173,7 +170,7 @@ input:focus-visible {
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.19em;
-    line-height: 1.4;
+    line-height: 1.4
 }
 
 .hero-copy h1 {
@@ -182,11 +179,11 @@ input:focus-visible {
     font-size: clamp(32px, 4.3vw, 49px);
     font-weight: 720;
     letter-spacing: -0.045em;
-    line-height: 1.12;
+    line-height: 1.12
 }
 
 .hero-copy h1 span {
-    color: #c4d0ff;
+    color: #c4d0ff
 }
 
 .hero-description {
@@ -194,14 +191,14 @@ input:focus-visible {
     margin-top: 18px;
     color: rgba(246, 248, 255, 0.82);
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.8
 }
 
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 11px;
-    margin-top: 27px;
+    margin-top: 27px
 }
 
 .primary-button,
@@ -211,33 +208,33 @@ input:focus-visible {
     border-radius: 9px;
     font-size: 12px;
     font-weight: 750;
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease
 }
 
 .primary-button {
     border: 1px solid #fff;
     background: #f4f6ff;
-    color: #27365f;
+    color: #27365f
 }
 
 .primary-button span {
     margin-left: 8px;
-    font-size: 16px;
+    font-size: 16px
 }
 
 .secondary-button {
     border: 1px solid rgba(255, 255, 255, 0.32);
     background: rgba(255, 255, 255, 0.08);
-    color: #fff;
+    color: #fff
 }
 
 .primary-button:hover,
 .secondary-button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px)
 }
 
 .secondary-button:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15)
 }
 
 .hero-side {
@@ -245,7 +242,7 @@ input:focus-visible {
     border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 15px;
     background: rgba(15, 21, 44, 0.2);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px)
 }
 
 .hero-side-label {
@@ -253,7 +250,7 @@ input:focus-visible {
     color: #cad3ff;
     font-size: 9px;
     font-weight: 800;
-    letter-spacing: 0.17em;
+    letter-spacing: 0.17em
 }
 
 .roadmap-line {
@@ -263,7 +260,7 @@ input:focus-visible {
     padding: 10px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.88);
-    font-size: 12px;
+    font-size: 12px
 }
 
 .roadmap-dot {
@@ -272,7 +269,7 @@ input:focus-visible {
     flex: 0 0 7px;
     border-radius: 50%;
     background: #b7c7ff;
-    box-shadow: 0 0 0 4px rgba(183, 199, 255, 0.11);
+    box-shadow: 0 0 0 4px rgba(183, 199, 255, 0.11)
 }
 
 .overview-strip {
@@ -282,7 +279,7 @@ input:focus-visible {
     padding: 17px 10px;
     border: 1px solid var(--border-light);
     border-radius: 14px;
-    background: rgba(23, 30, 41, 0.75);
+    background: rgba(23, 30, 41, 0.75)
 }
 
 .overview-item {
@@ -293,34 +290,34 @@ input:focus-visible {
     gap: 3px;
     min-height: 49px;
     border-right: 1px solid var(--border-light);
-    text-align: center;
+    text-align: center
 }
 
 .overview-item:last-child {
-    border-right: 0;
+    border-right: 0
 }
 
 .overview-item strong {
     color: #e6ebff;
     font-size: 18px;
     font-weight: 750;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.02em
 }
 
 .overview-item:last-child strong {
     font-size: 13px;
-    letter-spacing: 0;
+    letter-spacing: 0
 }
 
 .overview-item span {
     color: var(--subtle);
     font-size: 10px;
     font-weight: 650;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.04em
 }
 
 .content-section-block {
-    margin-bottom: 47px;
+    margin-bottom: 47px
 }
 
 .section-heading-row {
@@ -328,7 +325,7 @@ input:focus-visible {
     align-items: flex-end;
     justify-content: space-between;
     gap: 20px;
-    margin-bottom: 21px;
+    margin-bottom: 21px
 }
 
 .section-heading-row h2,
@@ -337,14 +334,14 @@ input:focus-visible {
     color: var(--text);
     font-size: 25px;
     font-weight: 690;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.035em
 }
 
 .section-description {
     margin-top: 5px;
     color: var(--muted);
     font-size: 12px;
-    line-height: 1.75;
+    line-height: 1.75
 }
 
 .section-side-note {
@@ -353,13 +350,13 @@ input:focus-visible {
     border-radius: 7px;
     color: var(--subtle);
     font-size: 10px;
-    white-space: nowrap;
+    white-space: nowrap
 }
 
 .unit-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
+    gap: 15px
 }
 
 .unit-card {
@@ -374,7 +371,7 @@ input:focus-visible {
     background: linear-gradient(145deg, rgba(30, 40, 55, 0.96), rgba(23, 30, 41, 0.98));
     color: var(--text);
     text-align: left;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease
 }
 
 .unit-card::after {
@@ -385,20 +382,20 @@ input:focus-visible {
     height: 130px;
     border: 1px solid rgba(141, 167, 255, 0.1);
     border-radius: 50%;
-    content: "";
+    content: ""
 }
 
 .unit-card:hover {
     transform: translateY(-3px);
     border-color: rgba(141, 167, 255, 0.5);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16)
 }
 
 .unit-card-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 18px;
+    margin-bottom: 18px
 }
 
 .unit-number {
@@ -412,27 +409,27 @@ input:focus-visible {
     background: var(--accent-soft);
     color: #b8c7ff;
     font-size: 11px;
-    font-weight: 800;
+    font-weight: 800
 }
 
 .unit-topic-count {
     color: var(--subtle);
     font-size: 10px;
-    font-weight: 650;
+    font-weight: 650
 }
 
 .unit-card h3 {
     margin-bottom: 6px;
     font-size: 17px;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.02em
 }
 
 .unit-card p {
     max-width: 500px;
     color: var(--muted);
     font-size: 11px;
-    line-height: 1.7;
+    line-height: 1.7
 }
 
 .unit-card-bottom {
@@ -443,11 +440,11 @@ input:focus-visible {
     padding-top: 15px;
     color: #a9baff;
     font-size: 10px;
-    font-weight: 750;
+    font-weight: 750
 }
 
 .unit-card-bottom span:last-child {
-    font-size: 16px;
+    font-size: 16px
 }
 
 .search-panel {
@@ -458,11 +455,11 @@ input:focus-visible {
     padding: 27px 29px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    background: var(--surface);
+    background: var(--surface)
 }
 
 .search-panel h2 {
-    font-size: 21px;
+    font-size: 21px
 }
 
 .search-area label,
@@ -471,7 +468,7 @@ input:focus-visible {
     margin-bottom: 7px;
     color: #c7d0dd;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 700
 }
 
 .search-area input,
@@ -485,24 +482,24 @@ input:focus-visible {
     background: #111823;
     color: var(--text);
     font-size: 12px;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease
 }
 
 .search-area input::placeholder,
 .program-search-wrap input::placeholder {
-    color: #667487;
+    color: #667487
 }
 
 .search-area input:focus,
 .program-search-wrap input:focus {
     border-color: var(--accent-strong);
-    box-shadow: 0 0 0 3px rgba(111, 141, 242, 0.12);
+    box-shadow: 0 0 0 3px rgba(111, 141, 242, 0.12)
 }
 
 .global-search-results {
     display: grid;
     gap: 6px;
-    margin-top: 7px;
+    margin-top: 7px
 }
 
 .search-result {
@@ -517,28 +514,28 @@ input:focus-visible {
     background: rgba(255, 255, 255, 0.035);
     color: var(--text);
     text-align: left;
-    font-size: 11px;
+    font-size: 11px
 }
 
 .search-result:hover {
     border-color: var(--border);
-    background: var(--surface-soft);
+    background: var(--surface-soft)
 }
 
 .search-result small {
     color: var(--subtle);
     font-size: 9px;
-    white-space: nowrap;
+    white-space: nowrap
 }
 
 .search-empty {
     padding: 10px 2px;
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 11px
 }
 
 .page-heading {
-    margin: 8px 0 25px;
+    margin: 8px 0 25px
 }
 
 .page-heading h1,
@@ -548,13 +545,13 @@ input:focus-visible {
     font-size: clamp(29px, 4vw, 39px);
     font-weight: 720;
     letter-spacing: -0.045em;
-    line-height: 1.2;
+    line-height: 1.2
 }
 
 .page-heading .section-description {
     max-width: 760px;
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 13px
 }
 
 .back-button {
@@ -569,12 +566,12 @@ input:focus-visible {
     color: #cbd5e2;
     font-size: 11px;
     font-weight: 700;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease
 }
 
 .back-button:hover {
     border-color: #6378b8;
-    background: var(--surface-raised);
+    background: var(--surface-raised)
 }
 
 .unit-progress-row {
@@ -587,17 +584,17 @@ input:focus-visible {
     background: rgba(23, 30, 41, 0.7);
     color: var(--muted);
     font-size: 10px;
-    font-weight: 650;
+    font-weight: 650
 }
 
 .unit-progress-row span:first-child {
-    color: #bdcaff;
+    color: #bdcaff
 }
 
 .topic-list {
     display: grid;
     gap: 9px;
-    margin-top: 13px;
+    margin-top: 13px
 }
 
 .topic-list-item {
@@ -612,13 +609,13 @@ input:focus-visible {
     background: var(--surface);
     color: var(--text);
     text-align: left;
-    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease
 }
 
 .topic-list-item:hover {
     transform: translateX(2px);
     border-color: rgba(141, 167, 255, 0.48);
-    background: var(--surface-raised);
+    background: var(--surface-raised)
 }
 
 .topic-list-number {
@@ -630,13 +627,13 @@ input:focus-visible {
     background: var(--accent-soft);
     color: #b6c6ff;
     font-size: 10px;
-    font-weight: 800;
+    font-weight: 800
 }
 
 .topic-list-text strong {
     display: block;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 700
 }
 
 .topic-list-text small {
@@ -644,12 +641,12 @@ input:focus-visible {
     margin-top: 3px;
     color: var(--subtle);
     font-size: 10px;
-    line-height: 1.55;
+    line-height: 1.55
 }
 
 .topic-list-arrow {
     color: #9db1ff;
-    font-size: 17px;
+    font-size: 17px
 }
 
 .topic-heading {
@@ -657,11 +654,11 @@ input:focus-visible {
     padding: 26px 28px;
     border: 1px solid rgba(141, 167, 255, 0.18);
     border-radius: 16px;
-    background: linear-gradient(115deg, rgba(39, 59, 105, 0.72), rgba(55, 43, 76, 0.72));
+    background: linear-gradient(115deg, rgba(39, 59, 105, 0.72), rgba(55, 43, 76, 0.72))
 }
 
 .topic-heading h1 {
-    font-size: clamp(27px, 3.5vw, 35px);
+    font-size: clamp(27px, 3.5vw, 35px)
 }
 
 .topic-overview {
@@ -669,13 +666,13 @@ input:focus-visible {
     margin-top: 11px;
     color: #c1cad8;
     font-size: 13px;
-    line-height: 1.8;
+    line-height: 1.8
 }
 
 .topic-content-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 13px;
+    gap: 13px
 }
 
 .study-card {
@@ -683,19 +680,19 @@ input:focus-visible {
     padding: 20px 21px;
     border: 1px solid var(--border);
     border-radius: 13px;
-    background: var(--surface);
+    background: var(--surface)
 }
 
 .main-study-card,
 .steps-card {
-    grid-column: span 2;
+    grid-column: span 2
 }
 
 .card-heading {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 15px
 }
 
 .card-index,
@@ -709,33 +706,33 @@ input:focus-visible {
     background: var(--accent-soft);
     color: #b4c4ff;
     font-size: 9px;
-    font-weight: 800;
+    font-weight: 800
 }
 
 .card-heading h2 {
     color: #e7ecf5;
     font-size: 13px;
-    font-weight: 720;
+    font-weight: 720
 }
 
 .study-copy {
     color: #bcc6d4;
     font-size: 12px;
-    line-height: 1.85;
+    line-height: 1.85
 }
 
-.study-copy p + p {
-    margin-top: 9px;
+.study-copy p+p {
+    margin-top: 9px
 }
 
 .study-copy strong {
     color: #e8edf7;
-    font-weight: 700;
+    font-weight: 700
 }
 
 .formula-content {
     display: grid;
-    gap: 8px;
+    gap: 8px
 }
 
 .formula-line {
@@ -748,25 +745,25 @@ input:focus-visible {
     font-size: 11px;
     line-height: 1.65;
     white-space: pre-wrap;
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere
 }
 
 .formula-note {
     margin-top: 3px;
     color: var(--subtle);
     font-size: 10px;
-    line-height: 1.65;
+    line-height: 1.65
 }
 
 .example-box {
     padding: 13px 14px;
     border-left: 2px solid var(--teal);
     border-radius: 0 8px 8px 0;
-    background: rgba(113, 199, 186, 0.055);
+    background: rgba(113, 199, 186, 0.055)
 }
 
-.example-box p + p {
-    margin-top: 8px;
+.example-box p+p {
+    margin-top: 8px
 }
 
 .procedure-list,
@@ -774,44 +771,44 @@ input:focus-visible {
     padding-left: 20px;
     color: #bcc6d4;
     font-size: 11px;
-    line-height: 1.8;
+    line-height: 1.8
 }
 
 .procedure-list li,
 .key-points-list li {
     padding-left: 4px;
-    margin: 4px 0;
+    margin: 4px 0
 }
 
 .procedure-list li::marker {
     color: #9eb1ff;
-    font-weight: 800;
+    font-weight: 800
 }
 
 .key-points-list li::marker {
-    color: var(--teal);
+    color: var(--teal)
 }
 
 .mistakes-card .study-copy {
-    color: #d1c5ad;
+    color: #d1c5ad
 }
 
 .related-program-section {
-    margin-top: 39px;
+    margin-top: 39px
 }
 
 .compact-heading {
-    margin-bottom: 15px;
+    margin-bottom: 15px
 }
 
 .compact-heading h2 {
-    font-size: 22px;
+    font-size: 22px
 }
 
 .related-program-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
+    gap: 9px
 }
 
 .related-program-card {
@@ -825,12 +822,12 @@ input:focus-visible {
     background: var(--surface);
     color: var(--text);
     text-align: left;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease
 }
 
 .related-program-card:hover {
     border-color: rgba(141, 167, 255, 0.5);
-    background: var(--surface-raised);
+    background: var(--surface-raised)
 }
 
 .program-icon {
@@ -844,7 +841,7 @@ input:focus-visible {
     color: var(--teal);
     font-family: Consolas, monospace;
     font-size: 11px;
-    font-weight: 800;
+    font-weight: 800
 }
 
 .related-program-card strong {
@@ -852,14 +849,14 @@ input:focus-visible {
     color: #e3eaf5;
     font-size: 11px;
     font-weight: 700;
-    line-height: 1.55;
+    line-height: 1.55
 }
 
 .related-program-card small {
     display: block;
     margin-top: 4px;
     color: var(--subtle);
-    font-size: 9px;
+    font-size: 9px
 }
 
 .no-related-programs {
@@ -867,37 +864,37 @@ input:focus-visible {
     border: 1px dashed var(--border);
     border-radius: 9px;
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 11px
 }
 
 .program-search-wrap {
     max-width: 660px;
-    margin: 0 0 23px;
+    margin: 0 0 23px
 }
 
 .result-count {
     margin-top: 7px;
     color: var(--subtle);
     font-size: 10px;
-    text-align: right;
+    text-align: right
 }
 
 .program-list {
     display: grid;
-    gap: 22px;
+    gap: 22px
 }
 
 .program-category-section h2 {
     margin-bottom: 10px;
     color: #dce4f1;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 700
 }
 
 .program-category-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
+    gap: 9px
 }
 
 .program-list-card {
@@ -911,13 +908,13 @@ input:focus-visible {
     background: var(--surface);
     color: var(--text);
     text-align: left;
-    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease
 }
 
 .program-list-card:hover {
     transform: translateY(-1px);
     border-color: rgba(141, 167, 255, 0.48);
-    background: var(--surface-raised);
+    background: var(--surface-raised)
 }
 
 .program-list-card strong {
@@ -925,14 +922,14 @@ input:focus-visible {
     color: #e6ebf5;
     font-size: 11px;
     font-weight: 700;
-    line-height: 1.55;
+    line-height: 1.55
 }
 
 .program-list-card small {
     display: block;
     margin-top: 4px;
     color: var(--subtle);
-    font-size: 9px;
+    font-size: 9px
 }
 
 .program-panel {
@@ -940,7 +937,7 @@ input:focus-visible {
     overflow: hidden;
     border: 1px solid var(--border);
     border-radius: 13px;
-    background: var(--surface);
+    background: var(--surface)
 }
 
 .program-panel-heading {
@@ -950,19 +947,19 @@ input:focus-visible {
     gap: 15px;
     min-height: 58px;
     padding: 10px 16px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border)
 }
 
-.program-panel-heading > div {
+.program-panel-heading>div {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px
 }
 
 .program-panel-heading h2 {
     color: #e5ebf5;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 700
 }
 
 .copy-button {
@@ -974,13 +971,13 @@ input:focus-visible {
     color: #ced8e7;
     font-size: 10px;
     font-weight: 700;
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease
 }
 
 .copy-button:hover,
 .copy-button.copied {
     border-color: #5aa99c;
-    color: #88d8c8;
+    color: #88d8c8
 }
 
 .code-block {
@@ -991,23 +988,23 @@ input:focus-visible {
     color: #d0d9e6;
     font: 12px/1.75 "Cascadia Code", Consolas, "Courier New", monospace;
     tab-size: 4;
-    white-space: pre;
+    white-space: pre
 }
 
 .output-panel {
-    margin-bottom: 0;
+    margin-bottom: 0
 }
 
 .output-panel-number {
     border-color: rgba(113, 199, 186, 0.22);
     background: rgba(113, 199, 186, 0.1);
-    color: #8bd8ca;
+    color: #8bd8ca
 }
 
 .terminal-window {
     overflow: hidden;
     background: #0d1219;
-    color: #c9d3df;
+    color: #c9d3df
 }
 
 .terminal-titlebar {
@@ -1017,38 +1014,38 @@ input:focus-visible {
     min-height: 43px;
     padding: 0 14px;
     border-bottom: 1px solid #27313d;
-    background: #171f2a;
+    background: #171f2a
 }
 
 .terminal-dots {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 5px
 }
 
 .terminal-dots span {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #667487;
+    background: #667487
 }
 
 .terminal-dots span:first-child {
-    background: #c76f72;
+    background: #c76f72
 }
 
 .terminal-dots span:nth-child(2) {
-    background: #c7a66a;
+    background: #c7a66a
 }
 
 .terminal-dots span:nth-child(3) {
-    background: #6da98b;
+    background: #6da98b
 }
 
 .terminal-title {
     color: #c5cfde;
     font-size: 10px;
-    font-weight: 650;
+    font-weight: 650
 }
 
 .terminal-language {
@@ -1056,7 +1053,7 @@ input:focus-visible {
     color: #6f7d90;
     font-size: 8px;
     font-weight: 750;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.12em
 }
 
 .output-block {
@@ -1067,7 +1064,7 @@ input:focus-visible {
     color: #c3e6d5;
     font: 12px/1.8 "Cascadia Code", Consolas, "Courier New", monospace;
     white-space: pre-wrap;
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere
 }
 
 .terminal-statusbar {
@@ -1082,20 +1079,20 @@ input:focus-visible {
     color: #758295;
     font-size: 8px;
     font-weight: 650;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.06em
 }
 
-.terminal-statusbar > span:first-child {
+.terminal-statusbar>span:first-child {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 7px
 }
 
 .status-indicator {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #74c19e;
+    background: #74c19e
 }
 
 .site-footer {
@@ -1106,7 +1103,7 @@ input:focus-visible {
     padding: 20px 2px 0;
     border-top: 1px solid var(--border-light);
     color: var(--subtle);
-    font-size: 10px;
+    font-size: 10px
 }
 
 .footer-brand {
@@ -1116,216 +1113,216 @@ input:focus-visible {
     color: #cbd5e2;
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1em
 }
 
 .footer-mark {
     width: 23px;
     height: 23px;
     border-radius: 6px;
-    font-size: 11px;
+    font-size: 11px
 }
 
 .site-footer p {
     padding-left: 13px;
-    border-left: 1px solid var(--border);
+    border-left: 1px solid var(--border)
 }
 
 .site-footer .footer-note {
     margin-left: auto;
     border-left: 0;
     padding-left: 0;
-    text-align: right;
+    text-align: right
 }
 
-@media (max-width: 850px) {
+@media (max-width:850px) {
     .hero-panel {
         grid-template-columns: 1fr;
         gap: 26px;
-        padding: 38px;
+        padding: 38px
     }
 
     .hero-side {
-        max-width: 550px;
+        max-width: 550px
     }
 
     .topic-content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr
     }
 
     .main-study-card,
     .steps-card {
-        grid-column: auto;
+        grid-column: auto
     }
 }
 
-@media (max-width: 620px) {
+@media (max-width:620px) {
     body {
-        padding: 0 13px 25px;
+        padding: 0 13px 25px
     }
 
     .site-header {
-        min-height: 68px;
+        min-height: 68px
     }
 
     .brand-mark {
         width: 30px;
-        height: 30px;
+        height: 30px
     }
 
     .nav-button {
         padding: 7px 10px;
-        font-size: 11px;
+        font-size: 11px
     }
 
     .container {
-        padding-top: 17px;
+        padding-top: 17px
     }
 
     .hero-panel {
         min-height: 0;
         padding: 29px 22px;
-        border-radius: 16px;
+        border-radius: 16px
     }
 
     .hero-copy h1 {
-        font-size: 34px;
+        font-size: 34px
     }
 
     .hero-description {
-        font-size: 12px;
+        font-size: 12px
     }
 
     .hero-side {
-        padding: 17px;
+        padding: 17px
     }
 
     .overview-strip {
         grid-template-columns: repeat(2, 1fr);
         gap: 0;
-        margin: 13px 0 37px;
+        margin: 13px 0 37px
     }
 
     .overview-item {
-        padding: 9px 4px;
+        padding: 9px 4px
     }
 
     .overview-item:nth-child(2) {
-        border-right: 0;
+        border-right: 0
     }
 
     .overview-item:nth-child(-n+2) {
-        border-bottom: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--border-light)
     }
 
     .section-heading-row {
         align-items: flex-start;
         flex-direction: column;
-        gap: 9px;
+        gap: 9px
     }
 
     .section-heading-row h2 {
-        font-size: 22px;
+        font-size: 22px
     }
 
     .section-side-note {
-        white-space: normal;
+        white-space: normal
     }
 
     .unit-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr
     }
 
     .unit-card {
         min-height: 165px;
-        padding: 19px;
+        padding: 19px
     }
 
     .search-panel {
         grid-template-columns: 1fr;
         gap: 18px;
-        padding: 21px;
+        padding: 21px
     }
 
     .page-heading h1,
     .topic-heading h1 {
-        font-size: 29px;
+        font-size: 29px
     }
 
     .unit-progress-row {
         flex-direction: column;
-        gap: 3px;
+        gap: 3px
     }
 
     .topic-list-item {
         grid-template-columns: 33px minmax(0, 1fr) auto;
         gap: 10px;
-        padding: 12px;
+        padding: 12px
     }
 
     .topic-list-text strong {
-        font-size: 11px;
+        font-size: 11px
     }
 
     .topic-list-text small {
-        font-size: 9px;
+        font-size: 9px
     }
 
     .topic-heading {
-        padding: 21px 19px;
+        padding: 21px 19px
     }
 
     .study-card {
-        padding: 17px;
+        padding: 17px
     }
 
     .related-program-grid,
     .program-category-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr
     }
 
     .program-panel-heading {
-        padding: 9px 11px;
+        padding: 9px 11px
     }
 
     .program-panel-heading h2 {
-        font-size: 11px;
+        font-size: 11px
     }
 
     .code-block {
         padding: 17px 13px;
-        font-size: 10px;
+        font-size: 10px
     }
 
     .output-block {
         padding: 16px 13px;
-        font-size: 10px;
+        font-size: 10px
     }
 
     .terminal-titlebar {
         gap: 9px;
-        padding: 0 10px;
+        padding: 0 10px
     }
 
     .terminal-language {
-        font-size: 7px;
+        font-size: 7px
     }
 
     .site-footer {
         align-items: flex-start;
         flex-wrap: wrap;
         gap: 10px;
-        margin-top: 43px;
+        margin-top: 43px
     }
 
     .site-footer p {
         padding-left: 0;
-        border-left: 0;
+        border-left: 0
     }
 
     .site-footer .footer-note {
         width: 100%;
         margin-left: 0;
-        text-align: left;
+        text-align: left
     }
 }
