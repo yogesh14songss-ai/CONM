@@ -3,84 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Computer Oriented Numerical Methods assignment with C program answers and outputs.">
-    <title>CONM Assignment | Yogesh Parmar</title>
+    <meta name="description" content="Computer Oriented Numerical Methods study website covering all four syllabus units, methods, formulas, examples and C programs.">
+    <meta name="theme-color" content="#111722">
+    <title>CONM | Computer Oriented Numerical Methods</title>
     <link rel="stylesheet" href="prt.css">
 </head>
 <body>
-    <main class="container">
+    <div class="page-shell">
         <header class="site-header">
-            <div class="brand-mark">CONM</div>
-            <div>
-                <p class="eyebrow">PROGRAMMING ASSIGNMENT</p>
-                <h1>Computer Oriented Numerical Methods</h1>
-                <p class="subtitle">Prepared by Yogesh Parmar</p>
-            </div>
+            <a class="brand" href="#home" id="brand-home" aria-label="CONM home">
+                <span class="brand-mark">C</span>
+                <span class="brand-name">CONM</span>
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-button active" id="home-nav" type="button">Syllabus</button>
+                <button class="nav-button" id="programs-nav" type="button">C Programs</button>
+            </nav>
         </header>
 
-        <section id="topics-view" class="view">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">COURSE CONTENT</p>
-                    <h2>Explore Methods</h2>
-                    <p class="section-description">Select a method category to view its C programs, answers and outputs.</p>
-                </div>
-            </div>
-            <div id="topics-container" class="topics-grid"></div>
-        </section>
-
-        <section id="questions-view" class="hidden">
-            <button class="back-button" type="button" onclick="showTopics()">&#8592; All Categories</button>
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">CATEGORY PROGRAMS</p>
-                    <h2 id="topic-title"></h2>
-                    <p id="topic-summary" class="section-description"></p>
-                </div>
-            </div>
-            <label class="search-label" for="question-search">Find a program</label>
-            <input id="question-search" class="question-search" type="search" placeholder="Search methods..." autocomplete="off">
-            <p id="question-result-count" class="question-result-count"></p>
-            <div id="questions-container" class="questions-list"></div>
-        </section>
-
-        <section id="answer-view" class="hidden">
-            <button class="back-button" type="button" onclick="showQuestions()">&#8592; Back to Programs</button>
-            <article class="assignment-card">
-                <p class="eyebrow">CONM PROGRAM</p>
-                <h2 class="question-text" id="question-display"></h2>
-
-                <div class="content-section">
-                    <div class="content-heading">
-                        <span class="section-number">01</span>
-                        <h3>C Program Answer</h3>
+        <main class="container">
+            <section id="home-view" class="view">
+                <section class="hero-panel">
+                    <div class="hero-copy">
+                        <p class="eyebrow">BCA · COMPUTER SCIENCE</p>
+                        <h1>Computer Oriented<br><span>Numerical Methods</span></h1>
+                        <p class="hero-description">A structured guide to numerical analysis, equation solving, interpolation, integration and differential equations.</p>
+                        <div class="hero-actions">
+                            <button class="primary-button" id="explore-button" type="button">Explore syllabus <span aria-hidden="true">→</span></button>
+                            <button class="secondary-button" id="hero-programs-button" type="button">View C programs</button>
+                        </div>
                     </div>
-                    <pre id="answer-display" class="code-block"><code></code></pre>
-                </div>
+                    <div class="hero-side" aria-label="Course overview">
+                        <div class="hero-side-label">COURSE ROADMAP</div>
+                        <div class="roadmap-line"><span class="roadmap-dot"></span><span>Understand the concept</span></div>
+                        <div class="roadmap-line"><span class="roadmap-dot"></span><span>Study the method</span></div>
+                        <div class="roadmap-line"><span class="roadmap-dot"></span><span>Work through an example</span></div>
+                        <div class="roadmap-line"><span class="roadmap-dot"></span><span>Practise with C programs</span></div>
+                    </div>
+                </section>
 
-                <div class="content-section">
-                    <div class="content-heading">
-                        <span class="section-number output-number">02</span>
-                        <h3>Output</h3>
+                <section class="overview-strip" aria-label="Course statistics">
+                    <div class="overview-item"><strong id="unit-count">4</strong><span>Units</span></div>
+                    <div class="overview-item"><strong id="topic-count">37</strong><span>Syllabus topics</span></div>
+                    <div class="overview-item"><strong id="program-count">22</strong><span>C programs</span></div>
+                    <div class="overview-item"><strong>HTML · CSS · JS</strong><span>Built with</span></div>
+                </section>
+
+                <section class="content-section-block">
+                    <div class="section-heading-row">
+                        <div>
+                            <p class="eyebrow">COURSE STRUCTURE</p>
+                            <h2>Explore the four units</h2>
+                            <p class="section-description">Choose a unit to study its topics, formulas, worked examples and related programs.</p>
+                        </div>
+                        <div class="section-side-note">Organised according to the supplied syllabus</div>
+                    </div>
+                    <div id="unit-grid" class="unit-grid"></div>
+                </section>
+
+                <section class="search-panel">
+                    <div>
+                        <p class="eyebrow">QUICK FIND</p>
+                        <h2>Search the syllabus</h2>
+                        <p class="section-description">Search for a method, formula topic or numerical technique.</p>
+                    </div>
+                    <div class="search-area">
+                        <label for="global-search">Search topics</label>
+                        <input id="global-search" type="search" placeholder="For example: Bisection, significant digits, Simpson's rule" autocomplete="off">
+                        <div id="global-search-results" class="global-search-results" aria-live="polite"></div>
+                    </div>
+                </section>
+            </section>
+
+            <section id="unit-view" class="view hidden">
+                <button class="back-button" id="unit-back-button" type="button">← Back to syllabus</button>
+                <div class="page-heading">
+                    <p class="eyebrow" id="unit-eyebrow">UNIT I</p>
+                    <h1 id="unit-title">Numerical and Error Analysis</h1>
+                    <p class="section-description" id="unit-description"></p>
+                </div>
+                <div class="unit-progress-row">
+                    <span id="unit-topic-total">8 topics</span>
+                    <span>Concepts · Formulas · Examples · Programs</span>
+                </div>
+                <div id="unit-topic-list" class="topic-list"></div>
+            </section>
+
+            <section id="topic-view" class="view hidden">
+                <button class="back-button" id="topic-back-button" type="button">← Back to unit</button>
+                <div class="topic-heading">
+                    <p class="eyebrow" id="topic-unit-label">UNIT I · NUMERICAL AND ERROR ANALYSIS</p>
+                    <h1 id="topic-title"></h1>
+                    <p class="topic-overview" id="topic-overview"></p>
+                </div>
+                <div class="topic-content-grid">
+                    <article class="study-card main-study-card">
+                        <div class="card-heading"><span class="card-index">01</span><h2>Concept</h2></div>
+                        <div id="topic-concept" class="study-copy"></div>
+                    </article>
+                    <article class="study-card formula-card">
+                        <div class="card-heading"><span class="card-index">02</span><h2>Formula and notation</h2></div>
+                        <div id="topic-formula" class="formula-content"></div>
+                    </article>
+                    <article class="study-card example-card">
+                        <div class="card-heading"><span class="card-index">03</span><h2>Worked example</h2></div>
+                        <div id="topic-example" class="study-copy"></div>
+                    </article>
+                    <article class="study-card steps-card">
+                        <div class="card-heading"><span class="card-index">04</span><h2>Method / procedure</h2></div>
+                        <ol id="topic-steps" class="procedure-list"></ol>
+                    </article>
+                    <article class="study-card keypoints-card">
+                        <div class="card-heading"><span class="card-index">05</span><h2>Important points</h2></div>
+                        <ul id="topic-points" class="key-points-list"></ul>
+                    </article>
+                    <article class="study-card mistakes-card">
+                        <div class="card-heading"><span class="card-index">06</span><h2>Watch out for</h2></div>
+                        <div id="topic-caution" class="study-copy"></div>
+                    </article>
+                </div>
+                <section id="related-program-section" class="related-program-section">
+                    <div class="section-heading-row compact-heading">
+                        <div>
+                            <p class="eyebrow">PRACTICAL WORK</p>
+                            <h2>Related C programs</h2>
+                            <p class="section-description">Use these programs to connect the numerical method with its implementation.</p>
+                        </div>
+                    </div>
+                    <div id="related-programs" class="related-program-grid"></div>
+                </section>
+            </section>
+
+            <section id="programs-view" class="view hidden">
+                <button class="back-button" id="programs-back-button" type="button">← Back to syllabus</button>
+                <div class="page-heading">
+                    <p class="eyebrow">PRACTICAL LIBRARY</p>
+                    <h1>C Programs</h1>
+                    <p class="section-description">Browse the C implementations connected with the numerical methods syllabus.</p>
+                </div>
+                <div class="program-search-wrap">
+                    <label for="program-search">Find a program</label>
+                    <input id="program-search" type="search" placeholder="Search by method or problem statement" autocomplete="off">
+                    <p id="program-result-count" class="result-count"></p>
+                </div>
+                <div id="program-list" class="program-list"></div>
+            </section>
+
+            <section id="program-detail-view" class="view hidden">
+                <button class="back-button" id="program-detail-back-button" type="button">← Back to programs</button>
+                <div class="page-heading">
+                    <p class="eyebrow" id="program-category-label">C PROGRAM</p>
+                    <h1 id="program-title"></h1>
+                    <p class="section-description" id="program-question"></p>
+                </div>
+                <article class="program-panel">
+                    <div class="program-panel-heading">
+                        <div><span class="panel-number">01</span><h2>C Program Answer</h2></div>
+                        <button class="copy-button" id="copy-code-button" type="button">Copy code</button>
+                    </div>
+                    <pre class="code-block"><code id="program-code"></code></pre>
+                </article>
+                <article class="program-panel output-panel">
+                    <div class="program-panel-heading">
+                        <div><span class="panel-number output-panel-number">02</span><h2>Sample Output</h2></div>
+                        <button class="copy-button" id="copy-output-button" type="button">Copy output</button>
                     </div>
                     <div class="terminal-window">
                         <div class="terminal-titlebar">
-                            <span class="terminal-dot dot-red"></span>
-                            <span class="terminal-dot dot-yellow"></span>
-                            <span class="terminal-dot dot-green"></span>
+                            <div class="terminal-dots"><span></span><span></span><span></span></div>
                             <span class="terminal-title">Program Output</span>
+                            <span class="terminal-language">C CONSOLE</span>
                         </div>
-                        <pre id="output-display" class="output-block"></pre>
+                        <pre id="program-output" class="output-block"></pre>
+                        <div class="terminal-statusbar"><span><i class="status-indicator"></i> Sample run</span><span>CONM · C PROGRAM</span></div>
                     </div>
-                </div>
-            </article>
-        </section>
+                </article>
+            </section>
 
-        <footer class="site-footer">
-            <span>CONM Assignment</span>
-            <span>C Programming · Numerical Methods</span>
-        </footer>
-    </main>
+            <footer class="site-footer">
+                <div class="footer-brand"><span class="footer-mark">C</span><span>CONM</span></div>
+                <p>Computer Oriented Numerical Methods</p>
+           
+            </footer>
+        </main>
+    </div>
     <script src="prt.js"></script>
 </body>
 </html>
