@@ -1749,311 +1749,308 @@ var programTopics = [
 var currentUnitIndex = 0;
 
 function get(id) {
-  return document.getElementById(id);
+    return document.getElementById(id);
 }
 
 function escapeHTML(value) {
-  return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#39;");
+    return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
 function showView(id) {
-  var views = document.querySelectorAll(".view");
-  for (var i = 0; i < views.length; i++) views[i].classList.add("hidden");
-  get(id).classList.remove("hidden");
-  window.scrollTo(0, 0);
+    var views = document.querySelectorAll(".view");
+    for (var i = 0; i < views.length; i++) views[i].classList.add("hidden");
+    get(id).classList.remove("hidden");
+    window.scrollTo(0, 0);
 }
 
 function setNavigation(id) {
-  get("home-nav").classList.remove("active");
-  get("programs-nav").classList.remove("active");
-  get(id).classList.add("active");
+    get("home-nav").classList.remove("active");
+    get("programs-nav").classList.remove("active");
+    get(id).classList.add("active");
 }
 
 function topicCount() {
-  var count = 0;
-  for (var i = 0; i < unitData.length; i++) count += unitData[i].topics.length;
-  return count;
+    var count = 0;
+    for (var i = 0; i < unitData.length; i++) count += unitData[i].topics.length;
+    return count;
 }
 
 function programCount() {
-  var count = extraPrograms.length;
-  for (var i = 0; i < programTopics.length; i++) count += programTopics[i].questions.length;
-  return count;
+    var count = extraPrograms.length;
+    for (var i = 0; i < programTopics.length; i++) count += programTopics[i].questions.length;
+    return count;
 }
 
 
 function renderHome() {
-  get("unit-count").textContent = unitData.length;
-  get("topic-count").textContent = topicCount();
-  get("program-count").textContent = programCount();
-  var grid = get("unit-grid");
-  grid.innerHTML = "";
+    get("unit-count").textContent = unitData.length;
+    get("topic-count").textContent = topicCount();
+    get("program-count").textContent = programCount();
+    var grid = get("unit-grid");
+    grid.innerHTML = "";
 
-  for (var i = 0; i < unitData.length; i++) {
-    var unit = unitData[i];
-    var card = document.createElement("button");
-    card.type = "button";
-    card.className = "unit-card";
-    card.innerHTML = "<div class='unit-card-top'><span class='unit-number'>UNIT " + (i + 1) + "</span><span class='unit-topic-count'>" + unit.topics.length + " topics</span></div><h3>" + escapeHTML(unit.title) + "</h3><p>" + escapeHTML(unit.description) + "</p><div class='unit-card-bottom'><span>Open unit</span><span>→</span></div>";
-    card.addEventListener("click", makeUnitAction(i));
-    grid.appendChild(card);
-  }
+    for (var i = 0; i < unitData.length; i++) {
+        var unit = unitData[i];
+        var card = document.createElement("button");
+        card.type = "button";
+        card.className = "unit-card";
+        card.innerHTML = "<div class='unit-card-top'><span class='unit-number'>UNIT " + (i + 1) + "</span><span class='unit-topic-count'>" + unit.topics.length + " topics</span></div><h3>" + escapeHTML(unit.title) + "</h3><p>" + escapeHTML(unit.description) + "</p><div class='unit-card-bottom'><span>Open unit</span><span>→</span></div>";
+        card.addEventListener("click", makeUnitAction(i));
+        grid.appendChild(card);
+    }
 }
 
 function makeUnitAction(index) {
-  return function () { openUnit(index); };
+    return function () { openUnit(index); };
 }
 
 function openUnit(index) {
-  currentUnitIndex = index;
-  var unit = unitData[index];
-  get("unit-eyebrow").textContent = "UNIT " + (index + 1);
-  get("unit-title").textContent = unit.title;
-  get("unit-description").textContent = unit.description;
-  get("unit-topic-total").textContent = unit.topics.length + " syllabus topics";
-  var list = get("unit-topic-list");
-  list.innerHTML = "";
+    currentUnitIndex = index;
+    var unit = unitData[index];
+    get("unit-eyebrow").textContent = "UNIT " + (index + 1);
+    get("unit-title").textContent = unit.title;
+    get("unit-description").textContent = unit.description;
+    get("unit-topic-total").textContent = unit.topics.length + " syllabus topics";
+    var list = get("unit-topic-list");
+    list.innerHTML = "";
 
-  for (var i = 0; i < unit.topics.length; i++) {
-    var item = document.createElement("button");
-    item.type = "button";
-    item.className = "topic-list-item";
-    item.innerHTML = "<span class='topic-list-number'>" + (i + 1) + "</span><span class='topic-list-text'><strong>" + escapeHTML(unit.topics[i].title) + "</strong><small>" + escapeHTML(unit.topics[i].overview) + "</small></span><span class='topic-list-arrow'>→</span>";
-    item.addEventListener("click", makeTopicAction(index, i));
-    list.appendChild(item);
-  }
-  showView("unit-view");
-  setNavigation("home-nav");
+    for (var i = 0; i < unit.topics.length; i++) {
+        var item = document.createElement("button");
+        item.type = "button";
+        item.className = "topic-list-item";
+        item.innerHTML = "<span class='topic-list-number'>" + (i + 1) + "</span><span class='topic-list-text'><strong>" + escapeHTML(unit.topics[i].title) + "</strong><small>" + escapeHTML(unit.topics[i].overview) + "</small></span><span class='topic-list-arrow'>→</span>";
+        item.addEventListener("click", makeTopicAction(index, i));
+        list.appendChild(item);
+    }
+    showView("unit-view");
+    setNavigation("home-nav");
 }
 
 function makeTopicAction(unitIndex, topicIndex) {
-  return function () { openTopic(unitIndex, topicIndex); };
+    return function () { openTopic(unitIndex, topicIndex); };
 }
 
 function makeParagraphs(items, className) {
-  var html = "";
-  for (var i = 0; i < items.length; i++) html += "<p>" + escapeHTML(items[i]) + "</p>";
-  if (className) html = "<div class='" + className + "'>" + html + "</div>";
-  return html;
+    var html = "";
+    for (var i = 0; i < items.length; i++) html += "<p>" + escapeHTML(items[i]) + "</p>";
+    if (className) html = "<div class='" + className + "'>" + html + "</div>";
+    return html;
 }
 
 function getProgram(reference) {
-  if (reference.type === "extra") return extraPrograms[reference.index];
-  return programTopics[reference.group].questions[reference.index];
+    if (reference.type === "extra") return extraPrograms[reference.index];
+    return programTopics[reference.group].questions[reference.index];
 }
 
 function openTopic(unitIndex, topicIndex) {
-  currentUnitIndex = unitIndex;
-  var unit = unitData[unitIndex];
-  var topic = unit.topics[topicIndex];
-  get("topic-unit-label").textContent = "UNIT " + (unitIndex + 1) + " · " + unit.shortTitle.toUpperCase();
-  get("topic-title").textContent = topic.title;
-  get("topic-overview").textContent = topic.overview;
-  get("topic-concept").innerHTML = makeParagraphs(topic.concept);
+    currentUnitIndex = unitIndex;
+    var unit = unitData[unitIndex];
+    var topic = unit.topics[topicIndex];
+    get("topic-unit-label").textContent = "UNIT " + (unitIndex + 1) + " · " + unit.shortTitle.toUpperCase();
+    get("topic-title").textContent = topic.title;
+    get("topic-overview").textContent = topic.overview;
+    get("topic-concept").innerHTML = makeParagraphs(topic.concept);
 
-  var formulas = "";
-  for (var i = 0; i < topic.formula.length; i++) formulas += "<div class='formula-line'>" + escapeHTML(topic.formula[i]) + "</div>";
-  if (topic.formulaNote) formulas += "<p class='formula-note'>" + escapeHTML(topic.formulaNote) + "</p>";
-  get("topic-formula").innerHTML = formulas;
-  get("topic-example").innerHTML = makeParagraphs(topic.example, "example-box");
+    var formulas = "";
+    for (var i = 0; i < topic.formula.length; i++) formulas += "<div class='formula-line'>" + escapeHTML(topic.formula[i]) + "</div>";
+    if (topic.formulaNote) formulas += "<p class='formula-note'>" + escapeHTML(topic.formulaNote) + "</p>";
+    get("topic-formula").innerHTML = formulas;
+    get("topic-example").innerHTML = makeParagraphs(topic.example, "example-box");
 
-  var steps = "";
-  for (var j = 0; j < topic.steps.length; j++) steps += "<li>" + escapeHTML(topic.steps[j]) + "</li>";
-  get("topic-steps").innerHTML = steps;
+    var steps = "";
+    for (var j = 0; j < topic.steps.length; j++) steps += "<li>" + escapeHTML(topic.steps[j]) + "</li>";
+    get("topic-steps").innerHTML = steps;
 
-  var points = "";
-  for (var k = 0; k < topic.points.length; k++) points += "<li>" + escapeHTML(topic.points[k]) + "</li>";
-  get("topic-points").innerHTML = points;
-  get("topic-caution").textContent = topic.caution;
-  renderRelatedPrograms(topic.programs);
-  showView("topic-view");
-  setNavigation("home-nav");
+    var points = "";
+    for (var k = 0; k < topic.points.length; k++) points += "<li>" + escapeHTML(topic.points[k]) + "</li>";
+    get("topic-points").innerHTML = points;
+    get("topic-caution").textContent = topic.caution;
+    renderRelatedPrograms(topic.programs);
+    showView("topic-view");
+    setNavigation("home-nav");
 }
 
 function getProgramTitle(question) {
-  var position = question.indexOf("—");
-  if (position < 0) position = question.indexOf("-");
-  if (position < 0) return question;
-  return question.substring(0, position).trim();
+    var position = question.indexOf("—");
+    if (position < 0) position = question.indexOf("-");
+    if (position < 0) return question;
+    return question.substring(0, position).trim();
 }
 
 function openProgram(type, groupIndex, programIndex) {
-  var program;
-  var category;
-  if (type === "extra") {
-    program = extraPrograms[programIndex];
-    category = program.category;
-  } else {
-    program = programTopics[groupIndex].questions[programIndex];
-    category = programTopics[groupIndex].name;
-  }
-  get("program-category-label").textContent = category.toUpperCase();
-  get("program-title").textContent = program.title || getProgramTitle(program.q);
-  get("program-question").textContent = program.q;
-  get("program-code").textContent = program.answer;
-  get("program-output").textContent = program.output;
-  get("copy-code-button").textContent = "Copy code";
-  get("copy-output-button").textContent = "Copy output";
-  get("copy-code-button").classList.remove("copied");
-  get("copy-output-button").classList.remove("copied");
-  showView("program-detail-view");
-  setNavigation("programs-nav");
+    var program;
+    var category;
+    if (type === "extra") {
+        program = extraPrograms[programIndex];
+        category = program.category;
+    } else {
+        program = programTopics[groupIndex].questions[programIndex];
+        category = programTopics[groupIndex].name;
+    }
+    get("program-category-label").textContent = category.toUpperCase();
+    get("program-title").textContent = program.title || getProgramTitle(program.q);
+    get("program-question").textContent = program.q;
+    get("program-code").textContent = program.answer;
+    get("program-output").textContent = program.output;
+    get("copy-code-button").textContent = "Copy code";
+    get("copy-code-button").classList.remove("copied");
+    showView("program-detail-view");
+    setNavigation("programs-nav");
 }
 
 function openProgramAction(type, groupIndex, programIndex) {
-  return function () { openProgram(type, groupIndex, programIndex); };
+    return function () { openProgram(type, groupIndex, programIndex); };
 }
 
 function addProgramCard(container, type, groupIndex, programIndex, program, category, className) {
-  var card = document.createElement("button");
-  card.type = "button";
-  card.className = className;
-  card.innerHTML = "<span class='program-icon'>C</span><span><strong>" + escapeHTML(program.title || getProgramTitle(program.q)) + "</strong><small>" + escapeHTML(category) + "</small></span>";
-  card.addEventListener("click", openProgramAction(type, groupIndex, programIndex));
-  container.appendChild(card);
+    var card = document.createElement("button");
+    card.type = "button";
+    card.className = className;
+    card.innerHTML = "<span class='program-icon'>C</span><span><strong>" + escapeHTML(program.title || getProgramTitle(program.q)) + "</strong><small>" + escapeHTML(category) + "</small></span>";
+    card.addEventListener("click", openProgramAction(type, groupIndex, programIndex));
+    container.appendChild(card);
 }
 
 function renderRelatedPrograms(references) {
-  var list = get("related-programs");
-  list.innerHTML = "";
-  if (references.length === 0) {
-    list.innerHTML = "<p class='no-related-programs'>No C program is linked to this concept yet.</p>";
-    return;
-  }
-  for (var i = 0; i < references.length; i++) {
-    var ref = references[i];
-    var program = getProgram(ref);
-    addProgramCard(list, ref.type, ref.group || 0, ref.index, program, "View C answer and sample output", "related-program-card");
-  }
+    var list = get("related-programs");
+    list.innerHTML = "";
+    if (references.length === 0) {
+        list.innerHTML = "<p class='no-related-programs'>No C program is linked to this concept yet.</p>";
+        return;
+    }
+    for (var i = 0; i < references.length; i++) {
+        var ref = references[i];
+        var program = getProgram(ref);
+        addProgramCard(list, ref.type, ref.group || 0, ref.index, program, "View C answer and sample output", "related-program-card");
+    }
 }
 
 function renderProgramList() {
-  var search = get("program-search").value.toLowerCase().trim();
-  var list = get("program-list");
-  var count = 0;
-  list.innerHTML = "";
+    var search = get("program-search").value.toLowerCase().trim();
+    var list = get("program-list");
+    var count = 0;
+    list.innerHTML = "";
 
-  for (var i = 0; i < programTopics.length; i++) {
-    var group = programTopics[i];
-    var section = document.createElement("section");
-    var cards = document.createElement("div");
-    section.className = "program-category-section";
-    cards.className = "program-category-list";
-    for (var j = 0; j < group.questions.length; j++) {
-      var program = group.questions[j];
-      var words = (program.q + " " + group.name).toLowerCase();
-      if (search === "" || words.indexOf(search) >= 0) {
-        if (count === 0 || cards.children.length === 0) {
-          var heading = document.createElement("h2");
-          heading.textContent = group.name;
-          section.appendChild(heading);
+    for (var i = 0; i < programTopics.length; i++) {
+        var group = programTopics[i];
+        var section = document.createElement("section");
+        var cards = document.createElement("div");
+        section.className = "program-category-section";
+        cards.className = "program-category-list";
+        for (var j = 0; j < group.questions.length; j++) {
+            var program = group.questions[j];
+            var words = (program.q + " " + group.name).toLowerCase();
+            if (search === "" || words.indexOf(search) >= 0) {
+                if (count === 0 || cards.children.length === 0) {
+                    var heading = document.createElement("h2");
+                    heading.textContent = group.name;
+                    section.appendChild(heading);
+                }
+                addProgramCard(cards, "legacy", i, j, program, group.name, "program-list-card");
+                count++;
+            }
         }
-        addProgramCard(cards, "legacy", i, j, program, group.name, "program-list-card");
-        count++;
-      }
+        if (cards.children.length > 0) {
+            section.appendChild(cards);
+            list.appendChild(section);
+        }
     }
-    if (cards.children.length > 0) {
-      section.appendChild(cards);
-      list.appendChild(section);
-    }
-  }
 
-  var extraSection = document.createElement("section");
-  var extraCards = document.createElement("div");
-  extraSection.className = "program-category-section";
-  extraCards.className = "program-category-list";
-  for (var k = 0; k < extraPrograms.length; k++) {
-    var extra = extraPrograms[k];
-    var extraWords = (extra.q + " " + extra.title + " " + extra.category).toLowerCase();
-    if (search === "" || extraWords.indexOf(search) >= 0) {
-      if (extraCards.children.length === 0) {
-        var extraHeading = document.createElement("h2");
-        extraHeading.textContent = "NUMERICAL AND ERROR ANALYSIS";
-        extraSection.appendChild(extraHeading);
-      }
-      addProgramCard(extraCards, "extra", 0, k, extra, extra.category, "program-list-card");
-      count++;
+    var extraSection = document.createElement("section");
+    var extraCards = document.createElement("div");
+    extraSection.className = "program-category-section";
+    extraCards.className = "program-category-list";
+    for (var k = 0; k < extraPrograms.length; k++) {
+        var extra = extraPrograms[k];
+        var extraWords = (extra.q + " " + extra.title + " " + extra.category).toLowerCase();
+        if (search === "" || extraWords.indexOf(search) >= 0) {
+            if (extraCards.children.length === 0) {
+                var extraHeading = document.createElement("h2");
+                extraHeading.textContent = "NUMERICAL AND ERROR ANALYSIS";
+                extraSection.appendChild(extraHeading);
+            }
+            addProgramCard(extraCards, "extra", 0, k, extra, extra.category, "program-list-card");
+            count++;
+        }
     }
-  }
-  if (extraCards.children.length > 0) {
-    extraSection.appendChild(extraCards);
-    list.appendChild(extraSection);
-  }
-  get("program-result-count").textContent = count + (count === 1 ? " program" : " programs");
-  if (count === 0) list.innerHTML = "<p class='no-related-programs'>No programs match this search.</p>";
+    if (extraCards.children.length > 0) {
+        extraSection.appendChild(extraCards);
+        list.appendChild(extraSection);
+    }
+    get("program-result-count").textContent = count + (count === 1 ? " program" : " programs");
+    if (count === 0) list.innerHTML = "<p class='no-related-programs'>No programs match this search.</p>";
 }
 
 function showPrograms() {
-  get("program-search").value = "";
-  renderProgramList();
-  showView("programs-view");
-  setNavigation("programs-nav");
+    get("program-search").value = "";
+    renderProgramList();
+    showView("programs-view");
+    setNavigation("programs-nav");
 }
 
 function copyText(text, button) {
-  function done() {
-    button.textContent = "Copied";
-    button.classList.add("copied");
-  }
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(done, function () { copyFallback(text, button, done); });
-  } else {
-    copyFallback(text, button, done);
-  }
+    function done() {
+        button.textContent = "Copied";
+        button.classList.add("copied");
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { copyFallback(text, button, done); });
+    } else {
+        copyFallback(text, button, done);
+    }
 }
 
 function copyFallback(text, button, done) {
-  var field = document.createElement("textarea");
-  field.value = text;
-  field.style.position = "fixed";
-  field.style.left = "-9999px";
-  document.body.appendChild(field);
-  field.select();
-  var copied = document.execCommand("copy");
-  document.body.removeChild(field);
-  if (copied) done();
-  else button.textContent = "Select text to copy";
+    var field = document.createElement("textarea");
+    field.value = text;
+    field.style.position = "fixed";
+    field.style.left = "-9999px";
+    document.body.appendChild(field);
+    field.select();
+    var copied = document.execCommand("copy");
+    document.body.removeChild(field);
+    if (copied) done();
+    else button.textContent = "Select text to copy";
 }
 
 function searchTopics() {
-  var search = get("global-search").value.toLowerCase().trim();
-  var results = get("global-search-results");
-  results.innerHTML = "";
-  if (search === "") return;
-  var count = 0;
-  for (var i = 0; i < unitData.length; i++) {
-    for (var j = 0; j < unitData[i].topics.length; j++) {
-      var topic = unitData[i].topics[j];
-      var words = (topic.title + " " + topic.overview + " " + topic.concept.join(" ") + " " + topic.formula.join(" ") + " " + topic.points.join(" ")).toLowerCase();
-      if (words.indexOf(search) >= 0) {
-        var item = document.createElement("button");
-        item.type = "button";
-        item.className = "search-result";
-        item.innerHTML = "<span>" + escapeHTML(topic.title) + "</span><small>UNIT " + (i + 1) + "</small>";
-        item.addEventListener("click", makeTopicAction(i, j));
-        results.appendChild(item);
-        count++;
-      }
+    var search = get("global-search").value.toLowerCase().trim();
+    var results = get("global-search-results");
+    results.innerHTML = "";
+    if (search === "") return;
+    var count = 0;
+    for (var i = 0; i < unitData.length; i++) {
+        for (var j = 0; j < unitData[i].topics.length; j++) {
+            var topic = unitData[i].topics[j];
+            var words = (topic.title + " " + topic.overview + " " + topic.concept.join(" ") + " " + topic.formula.join(" ") + " " + topic.points.join(" ")).toLowerCase();
+            if (words.indexOf(search) >= 0) {
+                var item = document.createElement("button");
+                item.type = "button";
+                item.className = "search-result";
+                item.innerHTML = "<span>" + escapeHTML(topic.title) + "</span><small>UNIT " + (i + 1) + "</small>";
+                item.addEventListener("click", makeTopicAction(i, j));
+                results.appendChild(item);
+                count++;
+            }
+        }
     }
-  }
-  if (count === 0) results.innerHTML = "<p class='search-empty'>No matching topics were found.</p>";
+    if (count === 0) results.innerHTML = "<p class='search-empty'>No matching topics were found.</p>";
 }
 
 function startWebsite() {
-  renderHome();
-  get("home-nav").addEventListener("click", function () { showView("home-view"); setNavigation("home-nav"); });
-  get("brand-home").addEventListener("click", function (event) { event.preventDefault(); showView("home-view"); setNavigation("home-nav"); });
-  get("programs-nav").addEventListener("click", showPrograms);
-  get("hero-programs-button").addEventListener("click", showPrograms);
-  get("explore-button").addEventListener("click", function () { get("unit-grid").scrollIntoView({ behavior: "smooth", block: "start" }); });
-  get("unit-back-button").addEventListener("click", function () { showView("home-view"); setNavigation("home-nav"); });
-  get("topic-back-button").addEventListener("click", function () { openUnit(currentUnitIndex); });
-  get("programs-back-button").addEventListener("click", function () { showView("home-view"); setNavigation("home-nav"); });
-  get("program-detail-back-button").addEventListener("click", showPrograms);
-  get("global-search").addEventListener("input", searchTopics);
-  get("program-search").addEventListener("input", renderProgramList);
-  get("copy-code-button").addEventListener("click", function () { copyText(get("program-code").textContent, this); });
-  get("copy-output-button").addEventListener("click", function () { copyText(get("program-output").textContent, this); });
+    renderHome();
+    get("home-nav").addEventListener("click", function () { showView("home-view"); setNavigation("home-nav"); });
+    get("brand-home").addEventListener("click", function (event) { event.preventDefault(); showView("home-view"); setNavigation("home-nav"); });
+    get("programs-nav").addEventListener("click", showPrograms);
+    get("hero-programs-button").addEventListener("click", showPrograms);
+    get("explore-button").addEventListener("click", function () { get("unit-grid").scrollIntoView({ behavior: "smooth", block: "start" }); });
+    get("unit-back-button").addEventListener("click", function () { showView("home-view"); setNavigation("home-nav"); });
+    get("topic-back-button").addEventListener("click", function () { openUnit(currentUnitIndex); });
+    get("programs-back-button").addEventListener("click", function () { showView("home-view"); setNavigation("home-nav"); });
+    get("program-detail-back-button").addEventListener("click", showPrograms);
+    get("global-search").addEventListener("input", searchTopics);
+    get("program-search").addEventListener("input", renderProgramList);
+    get("copy-code-button").addEventListener("click", function () { copyText(get("program-code").textContent, this); });
 }
 
 startWebsite();
